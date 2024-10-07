@@ -4,10 +4,9 @@ node {
   }
   stage('SonarQube Analysis') {
     // Replace 'SonarScanner' with the actual name you gave to the SonarQube Scanner tool in Jenkins
-    def scannerHome = tool 'SonarScanner';
+    def scannerHome = tool 'sonar'; // Change 'SonarScanner' to 'sonar'
     withSonarQubeEnv() {
       sh "${scannerHome}/bin/sonar-scanner"
     }
   }
 }
-
